@@ -3,12 +3,14 @@ import {
   ChatIcon,
   CloseIcon,
   MinimizeIcon,
-  MessageIcon,
   ThumbsUpIcon,
   ThumbsDownIcon,
   EmojiIcon,
   PaperclipIcon,
   SendIcon,
+  MoreDotsIcon,
+  MessageBoldIcon,
+  OnlineDotIcon,
 } from '../icons/Icons';
 
 interface Message {
@@ -130,22 +132,22 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({
       {/* Header */}
       <div className="bg-white p-6 rounded-t-[30px] flex items-center justify-between border-b border-gray-200">
         <div className="flex items-center space-x-3">
-          <MessageIcon className="w-9 h-9 text-gray-600" />
+          <MoreDotsIcon className="w-9 h-9" />
           <h3 className="font-medium text-xl text-gray-900">{title}</h3>
         </div>
         <div className="flex items-center space-x-3">
           <button
-            className="w-8 h-8 hover:bg-gray-100 rounded-full flex items-center justify-center transition-colors"
+            className="w-9 h-9 hover:bg-gray-100 rounded-full flex items-center justify-center transition-colors"
             aria-label="Minimize chat"
           >
-            <MinimizeIcon className="w-4 h-4 text-gray-600" />
+            <MinimizeIcon className="w-9 h-9" />
           </button>
           <button
             onClick={handleToggle}
-            className="w-8 h-8 hover:bg-gray-100 rounded-full flex items-center justify-center transition-colors"
+            className="w-9 h-9 hover:bg-gray-100 rounded-full flex items-center justify-center transition-colors"
             aria-label="Close chat"
           >
-            <CloseIcon className="w-4 h-4 text-gray-600" />
+            <CloseIcon className="w-9 h-9" />
           </button>
         </div>
       </div>
@@ -156,9 +158,9 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({
           <div className="flex items-center space-x-4">
             <div className="relative">
               <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
-                <MessageIcon className="w-6 h-6 text-white" />
+                <MessageBoldIcon className="w-6 h-6 text-white" />
               </div>
-              <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white"></div>
+              <OnlineDotIcon className="absolute -bottom-1 -right-1 w-4 h-4" />
             </div>
             <div>
               <h4 className="font-medium text-lg text-gray-900">Chatbot</h4>
@@ -183,7 +185,7 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({
             {!message.isUser && index === 0 && (
               <div className="flex items-center space-x-2 mb-4">
                 <div className="w-7 h-7 bg-blue-500 rounded-full flex items-center justify-center">
-                  <MessageIcon className="w-4 h-4 text-white" />
+                  <MessageBoldIcon className="w-4 h-4 text-white" />
                 </div>
                 <span className="text-sm text-gray-600">
                   Livechat{' '}
@@ -250,29 +252,29 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({
           <textarea
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
-            onKeyPress={handleKeyPress}
+            onKeyDown={handleKeyPress}
             placeholder={placeholder}
             className="flex-1 bg-transparent border-none resize-none focus:outline-none text-sm text-gray-700 placeholder-gray-500"
             rows={1}
             style={{ minHeight: '24px', maxHeight: '96px' }}
           />
-          <button className="w-6 h-6 text-gray-500 hover:text-gray-700 transition-colors">
-            <EmojiIcon className="w-5 h-5" />
+          <button className="w-7 h-7 text-gray-500 hover:text-gray-700 transition-colors">
+            <EmojiIcon className="w-7 h-7" />
           </button>
-          <button className="w-6 h-6 text-gray-500 hover:text-gray-700 transition-colors">
-            <PaperclipIcon className="w-5 h-5" />
+          <button className="w-7 h-7 text-gray-500 hover:text-gray-700 transition-colors">
+            <PaperclipIcon className="w-7 h-7" />
           </button>
           <button
             onClick={handleSendMessage}
             disabled={!inputValue.trim()}
-            className={`w-6 h-6 transition-colors ${
+            className={`w-7 h-7 transition-colors ${
               inputValue.trim()
                 ? 'text-gray-700 hover:text-blue-500'
                 : 'text-gray-300 cursor-not-allowed'
             }`}
             aria-label="Send message"
           >
-            <SendIcon className="w-5 h-5" />
+            <SendIcon className="w-7 h-7" />
           </button>
         </div>
       </div>
