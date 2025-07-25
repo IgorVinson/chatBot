@@ -1,0 +1,18 @@
+{
+  "_description": "Sample pricing data for AI chatbot context injection",
+  "_usage": "This file contains pricing information that will be injected into AI prompts to help answer customer questions about pricing",
+  "plans": [
+    {
+      "name": "Basic",
+      "price": "$9.99/month",
+      "features": ["Feature 1", "Feature 2"],
+      "description": "Perfect for small businesses"
+    },
+    {
+      "name": "Pro",
+      "price": "$29.99/month", 
+      "features": ["All Basic features", "Feature 3", "Feature 4"],
+      "description": "Ideal for growing companies"
+    }
+  ]
+}

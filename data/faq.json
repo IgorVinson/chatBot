@@ -1,0 +1,21 @@
+{
+  "_description": "Sample FAQ data for AI chatbot context injection",
+  "_usage": "This file contains frequently asked questions that will help the AI provide accurate answers",
+  "faqs": [
+    {
+      "question": "How do I get started?",
+      "answer": "Simply sign up for an account and follow our onboarding guide.",
+      "category": "Getting Started"
+    },
+    {
+      "question": "What payment methods do you accept?",
+      "answer": "We accept all major credit cards and PayPal.",
+      "category": "Billing"
+    },
+    {
+      "question": "Can I cancel my subscription anytime?",
+      "answer": "Yes, you can cancel your subscription at any time with no cancellation fees.",
+      "category": "Billing"
+    }
+  ]
+}
