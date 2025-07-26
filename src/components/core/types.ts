@@ -1,11 +1,22 @@
-/**
- * TypeScript interfaces and types for the AI chatbot widget
- * 
- * This file contains all the type definitions used throughout the chatbot:
- * - Message types (user/bot messages)
- * - Chat state interfaces
- * - Configuration options
- * - API response types
- */
+export type MessageRole = 'user' | 'assistant';
 
-// TODO: Define Message, ChatState, ChatConfig, and other core types
+export interface Message {
+  id: string;
+  content: string;
+  role: MessageRole;
+  timestamp: Date;
+}
+
+export interface ChatState {
+  messages: Message[];
+  isLoading: boolean;
+  error: string | null;
+}
+
+export interface ChatConfig {
+  apiEndpoint?: string;
+  initialMessage?: string;
+  theme?: 'light' | 'dark';
+  position?: 'bottom-right' | 'bottom-left';
+  placeholder?: string;
+}

@@ -1,4 +1,6 @@
+import { ChatProvider } from '@/components/core/ChatProvider';
 import { ChatWidget } from '@/components/ui/ChatWidget';
+import { ErrorBoundary } from '@/components/ErrorBoundary';
 
 export default function Home() {
   return (
@@ -24,20 +26,27 @@ export default function Home() {
                 <span>TypeScript setup complete</span>
               </div>
               <div className="flex items-center">
-                <span className="text-yellow-500 mr-2">○</span>
+                <span className="text-green-500 mr-2">✓</span>
                 <span>Chat components (Step 2)</span>
               </div>
               <div className="flex items-center">
-                <span className="text-yellow-500 mr-2">○</span>
+                <span className="text-green-500 mr-2">✓</span>
                 <span>OpenAI integration (Step 3)</span>
+              </div>
+              <div className="flex items-center">
+                <span className="text-green-500 mr-2">✓</span>
+                <span>UI Components (Step 4)</span>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="fixed bottom-4 right-4">
-        <ChatWidget />
-      </div>
+      
+      <ErrorBoundary>
+        <ChatProvider>
+          <ChatWidget />
+        </ChatProvider>
+      </ErrorBoundary>
     </div>
   );
 }

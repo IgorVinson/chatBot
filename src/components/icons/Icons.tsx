@@ -1,12 +1,139 @@
 import React from 'react';
+import Image from 'next/image';
 
 interface IconProps {
   className?: string;
   size?: number | string;
 }
 
-// Inline SVG components from Figma design assets
+// Next.js Image components using SVG assets from public/icons directory
 export const MessageBoldIcon: React.FC<IconProps> = ({ className = '', size = 24 }) => (
+  <Image 
+    src="/icons/message-bold.svg" 
+    alt="Message" 
+    width={typeof size === 'string' ? parseInt(size) : size}
+    height={typeof size === 'string' ? parseInt(size) : size}
+    className={className}
+  />
+);
+
+export const MoreDotsIcon: React.FC<IconProps> = ({ className = '', size = 24 }) => (
+  <Image 
+    src="/icons/more-dots.svg" 
+    alt="More options" 
+    width={typeof size === 'string' ? parseInt(size) : size}
+    height={typeof size === 'string' ? parseInt(size) : size}
+    className={className}
+  />
+);
+
+export const CloseIcon: React.FC<IconProps> = ({ className = '', size = 24 }) => (
+  <Image 
+    src="/icons/close-minimize.svg" 
+    alt="Close" 
+    width={typeof size === 'string' ? parseInt(size) : size}
+    height={typeof size === 'string' ? parseInt(size) : size}
+    className={className}
+  />
+);
+
+export const MinimizeIcon: React.FC<IconProps> = ({ className = '', size = 24 }) => (
+  <Image 
+    src="/icons/message-minus.svg" 
+    alt="Minimize" 
+    width={typeof size === 'string' ? parseInt(size) : size}
+    height={typeof size === 'string' ? parseInt(size) : size}
+    className={className}
+  />
+);
+
+export const ThumbsUpIcon: React.FC<IconProps> = ({ className = '', size = 24 }) => (
+  <Image 
+    src="/icons/arrow-up.svg" 
+    alt="Thumbs up" 
+    width={typeof size === 'string' ? parseInt(size) : size}
+    height={typeof size === 'string' ? parseInt(size) : size}
+    className={className}
+  />
+);
+
+export const ThumbsDownIcon: React.FC<IconProps> = ({ className = '', size = 24 }) => (
+  <div className="transform rotate-180">
+    <Image 
+      src="/icons/arrow-up.svg" 
+      alt="Thumbs down" 
+      width={typeof size === 'string' ? parseInt(size) : size}
+      height={typeof size === 'string' ? parseInt(size) : size}
+      className={className}
+    />
+  </div>
+);
+
+export const PaperclipIcon: React.FC<IconProps> = ({ className = '', size = 24 }) => (
+  <Image 
+    src="/icons/paperclip.svg" 
+    alt="Attach file" 
+    width={typeof size === 'string' ? parseInt(size) : size}
+    height={typeof size === 'string' ? parseInt(size) : size}
+    className={className}
+  />
+);
+
+export const SendIcon: React.FC<IconProps> = ({ className = '', size = 24 }) => (
+  <Image 
+    src="/icons/send-arrow.svg" 
+    alt="Send message" 
+    width={typeof size === 'string' ? parseInt(size) : size}
+    height={typeof size === 'string' ? parseInt(size) : size}
+    className={className}
+  />
+);
+
+export const EmojiIcon: React.FC<IconProps> = ({ className = '', size = 24 }) => (
+  <Image 
+    src="/icons/send-button.svg" 
+    alt="Emoji" 
+    width={typeof size === 'string' ? parseInt(size) : size}
+    height={typeof size === 'string' ? parseInt(size) : size}
+    className={className}
+  />
+);
+
+export const ChatIcon: React.FC<IconProps> = ({ className = '', size = 24 }) => (
+  <MessageBoldIcon className={className} size={size} />
+);
+
+export const AvatarLargeIcon: React.FC<IconProps> = ({ className = '', size = 24 }) => (
+  <Image 
+    src="/icons/avatar-large.svg" 
+    alt="Avatar" 
+    width={typeof size === 'string' ? parseInt(size) : size}
+    height={typeof size === 'string' ? parseInt(size) : size}
+    className={className}
+  />
+);
+
+export const AvatarSmallIcon: React.FC<IconProps> = ({ className = '', size = 24 }) => (
+  <Image 
+    src="/icons/avatar-small.svg" 
+    alt="Avatar" 
+    width={typeof size === 'string' ? parseInt(size) : size}
+    height={typeof size === 'string' ? parseInt(size) : size}
+    className={className}
+  />
+);
+
+export const OnlineDotIcon: React.FC<IconProps> = ({ className = '', size = 24 }) => (
+  <Image 
+    src="/icons/online-dot.svg" 
+    alt="Online" 
+    width={typeof size === 'string' ? parseInt(size) : size}
+    height={typeof size === 'string' ? parseInt(size) : size}
+    className={className}
+  />
+);
+
+export const MessageAvatarIcon: React.FC<IconProps> = ({ className = '', size = 24 }) => (
   <svg 
     width={size} 
     height={size} 
@@ -16,140 +143,7 @@ export const MessageBoldIcon: React.FC<IconProps> = ({ className = '', size = 24
   >
     <path 
       d="M17.7391 2.08696H7.30435C4.42435 2.08696 2.08696 4.41391 2.08696 7.28348V13.5235V14.567C2.08696 17.4365 4.42435 19.7635 7.30435 19.7635H8.86957C9.1513 19.7635 9.52696 19.9513 9.70435 20.1809L11.2696 22.2574C11.9583 23.1757 13.0852 23.1757 13.7739 22.2574L15.3391 20.1809C15.5374 19.92 15.8504 19.7635 16.1739 19.7635H17.7391C20.6191 19.7635 22.9565 17.4365 22.9565 14.567V7.28348C22.9565 4.41391 20.6191 2.08696 17.7391 2.08696ZM8.34783 12.5217C7.76348 12.5217 7.30435 12.0522 7.30435 11.4783C7.30435 10.9043 7.77391 10.4348 8.34783 10.4348C8.92174 10.4348 9.3913 10.9043 9.3913 11.4783C9.3913 12.0522 8.93217 12.5217 8.34783 12.5217ZM12.5217 12.5217C11.9374 12.5217 11.4783 12.0522 11.4783 11.4783C11.4783 10.9043 11.9478 10.4348 12.5217 10.4348C13.0957 10.4348 13.5652 10.9043 13.5652 11.4783C13.5652 12.0522 13.1061 12.5217 12.5217 12.5217ZM16.6957 12.5217C16.1113 12.5217 15.6522 12.0522 15.6522 11.4783C15.6522 10.9043 16.1217 10.4348 16.6957 10.4348C17.2696 10.4348 17.7391 10.9043 17.7391 11.4783C17.7391 12.0522 17.28 12.5217 16.6957 12.5217Z" 
-      fill="currentColor"
+      fill="white"
     />
-  </svg>
-);
-
-export const MoreDotsIcon: React.FC<IconProps> = ({ className = '', size = 24 }) => (
-  <svg 
-    width={size} 
-    height={size} 
-    viewBox="0 0 35 35" 
-    fill="none" 
-    className={className}
-  >
-    <path d="M7.29167 14.5833C5.6875 14.5833 4.375 15.8958 4.375 17.5C4.375 19.1042 5.6875 20.4167 7.29167 20.4167C8.89583 20.4167 10.2083 19.1042 10.2083 17.5C10.2083 15.8958 8.89583 14.5833 7.29167 14.5833Z" fill="currentColor"/>
-    <path d="M27.7083 14.5833C26.1042 14.5833 24.7917 15.8958 24.7917 17.5C24.7917 19.1042 26.1042 20.4167 27.7083 20.4167C29.3125 20.4167 30.625 19.1042 30.625 17.5C30.625 15.8958 29.3125 14.5833 27.7083 14.5833Z" fill="currentColor"/>
-    <path d="M17.5 14.5833C15.8958 14.5833 14.5833 15.8958 14.5833 17.5C14.5833 19.1042 15.8958 20.4167 17.5 20.4167C19.1042 20.4167 20.4167 19.1042 20.4167 17.5C20.4167 15.8958 19.1042 14.5833 17.5 14.5833Z" fill="currentColor"/>
-  </svg>
-);
-
-export const CloseIcon: React.FC<IconProps> = ({ className = '', size = 24 }) => (
-  <svg 
-    width={size} 
-    height={size} 
-    viewBox="0 0 35 35" 
-    fill="none" 
-    className={className}
-  >
-    <path d="M12.4877 22.3864L22.5123 12.6136" stroke="currentColor" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M22.5123 22.3864L12.4877 12.6136" stroke="currentColor" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
-
-export const MinimizeIcon: React.FC<IconProps> = ({ className = '', size = 24 }) => (
-  <svg 
-    width={size} 
-    height={size} 
-    viewBox="0 0 35 35" 
-    fill="none" 
-    className={className}
-  >
-    <path d="M10.5 17.5H24.5" stroke="currentColor" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
-
-export const ThumbsUpIcon: React.FC<IconProps> = ({ className = '', size = 24 }) => (
-  <svg 
-    width={size} 
-    height={size} 
-    viewBox="0 0 28 27" 
-    fill="none" 
-    className={className}
-  >
-    <path d="M26.6955 11.416C25.8765 10.429 24.5943 9.81586 23.349 9.81586H20.0549C20.7963 8.63449 21.3542 7.44568 21.6942 6.31365C22.2131 4.58619 22.1949 3.08033 21.6417 1.95885C21.0185 0.695684 19.7557 0 18.086 0C17.9003 4.36688e-06 17.7188 0.0551495 17.5645 0.158443C17.4102 0.261736 17.2901 0.408525 17.2193 0.580195C15.9192 3.73354 12.5282 8.26576 9.33322 11.2514C9.00721 10.119 7.96242 9.28787 6.7265 9.28787H2.71283C1.21699 9.28787 0 10.5049 0 12.0006V23.933C0 25.4289 1.21699 26.6459 2.71283 26.6459H6.7265C7.64156 26.6459 8.45168 26.1899 8.94328 25.4938C9.68695 26.2093 10.6729 26.6459 11.7531 26.6459H21.8595C22.9767 26.6459 23.9716 26.1701 24.7368 25.2701C25.3675 24.5282 25.8154 23.5258 26.0321 22.3714L27.5217 14.4363C27.7216 13.3716 27.4281 12.299 26.6955 11.416ZM7.56428 23.9331C7.56428 24.395 7.18846 24.7709 6.7265 24.7709H2.71283C2.25088 24.7709 1.875 24.395 1.875 23.9331V12.0007C1.875 11.5387 2.25088 11.1629 2.71283 11.1629H6.7265C7.18846 11.1629 7.56428 11.5387 7.56428 12.0007V23.9331ZM25.6789 14.0903L24.1893 22.0256C23.9402 23.3528 23.1973 24.7709 21.8594 24.7709H11.7531C10.4773 24.7709 9.43934 23.617 9.43934 22.1985V13.659C12.9732 10.7254 16.9308 5.68693 18.6779 1.92111C19.6101 2.07885 19.8662 2.59781 19.9602 2.78836C20.5687 4.02182 20.0637 6.86191 17.517 10.1828C17.4105 10.3217 17.345 10.4875 17.3279 10.6616C17.3108 10.8358 17.3427 11.0112 17.4202 11.1681C17.4976 11.325 17.6173 11.4571 17.7659 11.5495C17.9145 11.6419 18.086 11.6908 18.261 11.6908H23.3491C24.0405 11.6908 24.7877 12.0529 25.2526 12.6132C25.5143 12.9288 25.8008 13.4411 25.6789 14.0903Z" fill="currentColor"/>
-  </svg>
-);
-
-export const ThumbsDownIcon: React.FC<IconProps> = ({ className = '', size = 24 }) => (
-  <div className="transform rotate-180">
-    <ThumbsUpIcon className={className} size={size} />
-  </div>
-);
-
-export const PaperclipIcon: React.FC<IconProps> = ({ className = '', size = 24 }) => (
-  <svg 
-    width={size} 
-    height={size} 
-    viewBox="0 0 30 30" 
-    fill="none" 
-    className={className}
-  >
-    <path d="M17.8033 10.4665L9.94233 18.0854C8.75873 19.2326 8.75873 21.0935 9.94233 22.2407V22.2407C11.1259 23.3878 13.046 23.3878 14.2296 22.2407L24.5925 12.1969C26.7634 10.0929 26.7634 6.68204 24.5925 4.57802V4.57802C22.4216 2.47399 18.9024 2.47399 16.7315 4.57802L6.36862 14.6218C3.21046 17.6827 3.21046 22.6434 6.36862 25.7043V25.7043C9.52678 28.7652 14.6452 28.7652 17.8033 25.7043L24.0924 19.6089" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
-
-export const SendIcon: React.FC<IconProps> = ({ className = '', size = 24 }) => (
-  <svg 
-    width={size} 
-    height={size} 
-    viewBox="0 0 28 28" 
-    fill="none" 
-    className={className}
-  >
-    <path d="M26.3763 11.9527L2.19125 0.153985C1.95884 0.0407269 1.70142 -0.0115315 1.44324 0.00212854C1.18506 0.0157886 0.934602 0.0949177 0.715436 0.232069C0.49627 0.369219 0.315605 0.559881 0.190446 0.78611C0.0652865 1.01234 -0.000251201 1.26669 7.23554e-07 1.52524V1.56899C0.000124511 1.77337 0.0253124 1.97698 0.0750007 2.17524L2.395 11.4552C2.4261 11.5789 2.49426 11.69 2.59033 11.7738C2.6864 11.8576 2.8058 11.91 2.9325 11.924L13.1288 13.0577C13.2984 13.0781 13.4547 13.16 13.5681 13.2878C13.6815 13.4157 13.7441 13.5806 13.7441 13.7515C13.7441 13.9224 13.6815 14.0873 13.5681 14.2151C13.4547 14.343 13.2984 14.4248 13.1288 14.4452L2.9325 15.579C2.8058 15.593 2.6864 15.6454 2.59033 15.7292C2.49426 15.813 2.4261 15.9241 2.395 16.0477L0.0750007 25.3265C0.0253124 25.5247 0.000124511 25.7283 7.23554e-07 25.9327V25.9765C-3.90326e-05 26.2349 0.0656535 26.4891 0.190901 26.7152C0.316148 26.9412 0.496834 27.1317 0.715966 27.2687C0.935099 27.4057 1.18548 27.4848 1.44356 27.4984C1.70163 27.512 1.95893 27.4597 2.19125 27.3465L26.375 15.5477C26.7118 15.3834 26.9957 15.1278 27.1942 14.81C27.3928 14.4922 27.4981 14.125 27.4981 13.7502C27.4981 13.3755 27.3928 13.0083 27.1942 12.6905C26.9957 12.3727 26.7131 12.117 26.3763 11.9527Z" fill="currentColor"/>
-  </svg>
-);
-
-export const EmojiIcon: React.FC<IconProps> = ({ className = '', size = 24 }) => (
-  <svg 
-    width={size} 
-    height={size} 
-    viewBox="0 0 30 30" 
-    fill="none" 
-    className={className}
-  >
-    <path d="M15 0C6.72897 0 0 6.72897 0 15C0 23.271 6.72897 30 15 30C23.271 30 30 23.271 30 15C30 6.72897 23.271 0 15 0ZM15 28.125C7.76285 28.125 1.875 22.2371 1.875 15C1.875 7.76285 7.76285 1.875 15 1.875C22.2371 1.875 28.125 7.76285 28.125 15C28.125 22.2371 22.2371 28.125 15 28.125ZM23.0595 19.1719C22.0814 20.3634 20.8512 21.3232 19.4576 21.9822C18.0639 22.6412 16.5415 22.983 14.9999 22.983C13.4584 22.983 11.9359 22.6412 10.5423 21.9822C9.1487 21.3232 7.91852 20.3634 6.94037 19.1719C6.86173 19.0768 6.80263 18.9672 6.76645 18.8492C6.73027 18.7313 6.71772 18.6074 6.72952 18.4846C6.74133 18.3618 6.77725 18.2425 6.83524 18.1336C6.89323 18.0247 6.97213 17.9284 7.06744 17.85C7.16274 17.7717 7.27257 17.7129 7.39062 17.6771C7.50868 17.6413 7.63264 17.6292 7.7554 17.6414C7.87816 17.6536 7.99731 17.6899 8.10601 17.7482C8.21472 17.8065 8.31084 17.8858 8.38887 17.9813C9.19113 18.9588 10.2002 19.7463 11.3433 20.2869C12.4865 20.8276 13.7353 21.108 14.9999 21.108C16.2645 21.108 17.5133 20.8276 18.6565 20.2869C19.7996 19.7463 20.8087 18.9588 21.611 17.9813C21.7691 17.7901 21.9966 17.6694 22.2436 17.6457C22.4906 17.622 22.7369 17.6971 22.9286 17.8546C23.1203 18.0122 23.2417 18.2393 23.2662 18.4862C23.2907 18.7331 23.2164 18.9797 23.0595 19.1719H23.0595ZM17.1759 12.4075V11.748C17.1759 10.3672 18.4639 9.24387 20.047 9.24387C21.6301 9.24387 22.9181 10.3672 22.9181 11.748V12.4078C22.9181 12.6565 22.8194 12.8949 22.6435 13.0707C22.4677 13.2465 22.2293 13.3453 21.9806 13.3453C21.732 13.3453 21.4935 13.2465 21.3177 13.0707C21.1419 12.8949 21.0431 12.6565 21.0431 12.4078V11.748C21.0431 11.451 20.6171 11.1189 20.047 11.1189C19.477 11.1189 19.0509 11.451 19.0509 11.748V12.4078C19.0509 12.6565 18.9522 12.8949 18.7764 13.0707C18.6005 13.2465 18.3621 13.3453 18.1134 13.3453C17.8648 13.3453 17.6263 13.2465 17.4505 13.0707C17.2747 12.8949 17.1759 12.6565 17.1759 12.4078V12.4075ZM7.08158 12.4075V11.748C7.08158 10.3672 8.36965 9.24387 9.95268 9.24387C11.5357 9.24387 12.8238 10.3672 12.8238 11.748V12.4078C12.8238 12.6565 12.725 12.8949 12.5492 13.0707C12.3734 13.2465 12.1349 13.3453 11.8863 13.3453C11.6376 13.3453 11.3992 13.2465 11.2234 13.0707C11.0475 12.8949 10.9488 12.6565 10.9488 12.4078V11.748C10.9488 11.451 10.5228 11.1189 9.95268 11.1189C9.38256 11.1189 8.95658 11.451 8.95658 11.748V12.4078C8.95658 12.6565 8.85781 12.8949 8.68199 13.0707C8.50618 13.2465 8.26772 13.3453 8.01908 13.3453C7.77044 13.3453 7.53198 13.2465 7.35617 13.0707C7.18035 12.8949 7.08158 12.6565 7.08158 12.4078V12.4075Z" fill="currentColor"/>
-  </svg>
-);
-
-export const ChatIcon: React.FC<IconProps> = ({ className = '', size = 24 }) => (
-  <MessageBoldIcon className={className} size={size} />
-);
-
-export const AvatarLargeIcon: React.FC<IconProps> = ({ className = '', size = 24 }) => (
-  <svg 
-    width={size} 
-    height={size} 
-    viewBox="0 0 48 48" 
-    fill="none" 
-    className={className}
-  >
-    <circle cx="24" cy="24" r="23.5" fill="white" stroke="#E3E3E3"/>
-  </svg>
-);
-
-export const AvatarSmallIcon: React.FC<IconProps> = ({ className = '', size = 24 }) => (
-  <svg 
-    width={size} 
-    height={size} 
-    viewBox="0 0 28 28" 
-    fill="none" 
-    className={className}
-  >
-    <circle cx="14" cy="14" r="13.5" fill="white" stroke="#E3E3E3"/>
-  </svg>
-);
-
-export const OnlineDotIcon: React.FC<IconProps> = ({ className = '', size = 24 }) => (
-  <svg 
-    width={size} 
-    height={size} 
-    viewBox="0 0 11 11" 
-    fill="none" 
-    className={className}
-  >
-    <circle cx="5.21739" cy="5.21739" r="5.21739" fill="#268750"/>
   </svg>
 );
